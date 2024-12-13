@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+}
+
+:root {
+  --left-bg-color: #c7cbcc;
+  --right-bg-color: #f2efe5;
+  --note-bg-color: #e3e1d9;
+  --btn--color: #b4b4b8;
+  --white--color: #fafaff;
+  --kiwi-color: #daddd8;
+  --banana--color: #ecebe4;
+  --off--white: #eef0f2
+}
+
+main {
+  width: auto;
+  height: 100svh;
+  display: flex;
+  position: relative;
+}
+
+.left-container {
+  background: var(--left-bg-color);
+  width: 10%;
+  height: 100%;
+
+}
+
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.heading-div {
+  margin-top: 0.5rem;
+  height: auto;
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.headings {
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  overflow: auto;
+  text-transform: capitalize;
+  max-width: 100%;
+  word-break: normal;
+  border-radius: 0.4rem;
+  color: rgb(68, 77, 86);
+  font-style: oblique;
+  background: var(--off--white);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.active {
+  font-size: large;
+  font-style: normal;
+  box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.8);
+
+}
+
+.input-div {
+  align-content: center;
+  font-size: x-large;
+  letter-spacing: 2;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--white--color);
+  padding: 1.5rem;
+
+}
+
+.input-div i {
+  cursor: pointer;
+
+}
+
+.text-input {
+  width: 100%;
+  border-radius: .4rem;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  display: none;
+
+}
+
+.right-container {
+  width: 90%;
+  height: 100svh;
+  background-color: var(--right-bg-color);
+}
+
+.note-div {
+  padding: 1.5rem;
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heading-text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.note {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  max-height: fit-content;
+  height: 250px;
+  margin: 0.5rem;
+  padding: 1rem;
+  position: relative;
+  background: var(--note-bg-color);
+  border-radius: 1rem;
+  color: rgb(68, 77, 86);
+}
+
+.note-p {
+
+  height: 100%;
+  overflow: scroll;
+  margin-bottom: 12px;
+
+}
+
+
+
+
+
+.fa-trash {
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  margin-top: 20px;
+  border-style: groove;
+  padding: 4px;
+  border-radius: 5px;
+  color: rgb(149, 165, 183);
+  cursor: pointer;
+  transition: 1s ease;
+  font-size: x-small;
+}
+
+.fa-trash:hover {
+  color: black;
+}
+
+
+
+.note .fa-file-pen {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  color: rgb(149, 165, 183);
+  cursor: pointer;
+  border-style: groove;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.create-note-btn {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  border-style: groove;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  color: rgb(149, 165, 183);
+}
+
+.create-note-btn:active {
+  scale: .99;
+}
+
+
+.textArea-div {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  display: none;
+
+}
+
+.text-area {
+
+  width: 100%;
+  min-height: fit-content;
+  height: 250px;
+  background: transparent;
+  overflow: scroll;
+  border-radius: .5rem;
+  font-weight: 300;
+  padding: .9rem;
+  outline: none;
+  border: none;
+  color: rgb(68, 77, 86);
+  border-radius: 8px;
+
+}
+
+.createText-div {
+
+  position: absolute;
+  transition: 2s ease;
+
+  top: 20%;
+  left: 40%;
+  width: 500px;
+  min-height: fit-content;
+  height: 300px;
+  background: var(--note-bg-color);
+  z-index: 100;
+  border-radius: .5rem;
+  padding: .9rem;
+  outline: none;
+  border: none;
+  color: rgb(68, 77, 86);
+}
+
+.save-NoteBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 7px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-style: groove;
+  padding: 5px;
+  border-radius: 5px;
+  color: rgb(110, 125, 141);
+  cursor: pointer;
+  z-index: 100;
+  margin-top: 0.5rem;
+
+
+}
+
+.save-NoteBtn:hover {
+  color: black;
+}
+
+.socialContainer {
+  width: 8%;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--left-bg-color);
+}
+
+.socialIcons {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.socialIcon {
+  font-size: xx-large;
+  color: rgb(110, 125, 141);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+
+
+@media only screen and (min-width: 820px) {
+  .left-container {
+    width: 20%;
+  }
+
+  .right-container {
+    overflow-y: scroll;
+  }
+
+  .createText-div {
+    left: 40%;
+    width: 500px;
+    min-height: fit-content;
+    height: 200px;
+  }
+
+
+
+
+}
+
+
+@media only screen and (min-width: 600px) {
+  .left-container {
+    width: 30%;
+  }
+
+  .right-container {
+    overflow-y: scroll;
+  }
+
+  .createText-div {
+    left: 40%;
+    width: 500px;
+    min-height: fit-content;
+    height: 200px;
+  }
+
+
+
+
+
+}
+
+@media only screen and (max-width: 600px) {
+  .left-container {
+    width: 40%;
+  }
+
+  .right-container {
+    overflow-y: scroll;
+  }
+
+  .createText-div {
+    left: 5%;
+    width: 350px;
+    min-height: fit-content;
+    height: 200px;
+  }
+
+  .text-area {
+    left: 30px;
+    width: 100%;
+    transition: 1s ease;
+
+  }
+
+  main {
+    overflow: hidden;
+  }
+
+
+}
